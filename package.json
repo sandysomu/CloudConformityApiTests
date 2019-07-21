@@ -1,0 +1,27 @@
+{
+  "name": "cloudconformityapitests",
+  "version": "1.0.0",
+  "description": "cloudconformityapitests for checks",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha 'test/*.js' --timeout 15000 --reporter mochawesome",
+    "report": "marge --inline=true mochawesome-report/mochawesome.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sandysomu/CloudConformityApiTests.git"
+  },
+  "author": "Sandeep Singh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sandysomu/CloudConformityApiTests/issues"
+  },
+  "homepage": "https://github.com/sandysomu/CloudConformityApiTests#readme",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4",
+    "mochawesome": "^4.0.1",
+    "mochawesome-report-generator": "^4.0.1",
+    "supertest": "^4.0.2"
+  }
+}
