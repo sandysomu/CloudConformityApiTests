@@ -5,9 +5,9 @@
     "passes": 15,
     "pending": 0,
     "failures": 0,
-    "start": "2019-07-21T09:00:11.442Z",
-    "end": "2019-07-21T09:00:22.895Z",
-    "duration": 11453,
+    "start": "2019-07-21T09:13:25.068Z",
+    "end": "2019-07-21T09:13:37.126Z",
+    "duration": 12058,
     "testsRegistered": 15,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "491ff8f6-c690-4a1c-a832-d5ecbcbcaca8",
+      "uuid": "bce21fd3-e98d-43a4-a37d-4d9324f0493b",
       "title": "",
       "fullFile": "",
       "file": "",
@@ -27,25 +27,25 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "0301493b-c149-40a7-a65c-c0e3ec1412b0",
+          "uuid": "28536ed3-3cc1-4ad3-8c85-c77a6aeafafa",
           "title": "CloudConformity API Test for DELETE  ... ",
-          "fullFile": "C:\\Development\\cc\\CloudConformityApiTests\\test\\DeleteChecks.js",
+          "fullFile": "C:\\Development\\cc\\ccnew\\CloudConformityApiTests\\test\\DeleteChecks.js",
           "file": "\\test\\DeleteChecks.js",
           "beforeHooks": [],
           "afterHooks": [],
           "tests": [],
           "suites": [
             {
-              "uuid": "3a08663c-725d-44f5-b622-0c9451762adf",
+              "uuid": "e2a0d649-2d98-477b-be6d-a66a3d04ccf2",
               "title": "DELETE Request",
-              "fullFile": "C:\\Development\\cc\\CloudConformityApiTests\\test\\DeleteChecks.js",
+              "fullFile": "C:\\Development\\cc\\ccnew\\CloudConformityApiTests\\test\\DeleteChecks.js",
               "file": "\\test\\DeleteChecks.js",
               "beforeHooks": [
                 {
                   "title": "\"before all\" hook",
                   "fullTitle": "CloudConformity API Test for DELETE  ...  DELETE Request \"before all\" hook",
                   "timedOut": false,
-                  "duration": 1974,
+                  "duration": 1699,
                   "state": null,
                   "speed": null,
                   "pass": false,
@@ -54,8 +54,8 @@
                   "context": null,
                   "code": "let endPoint = '/v1/checks'; \nresponseData = await apiHelper.sendPOSTRequest(apiEndPointHelper.baseUrl, endPoint, createCheckPayload);     \nexpect(responseData.status).to.equal(200);  \ncheckId= JSON.parse(responseData.text).data[0].id;   \nexpect(responseData.body.data[0].id).to.not.equal(null);  \nexpect(responseData.body.data[0].type).to.not.equal(null); \nexpect(responseData.body.data[0].attributes.region).to.not.equal(null); \nexpect(responseData.body.data[0].attributes.resource).to.not.equal(null);",
                   "err": {},
-                  "uuid": "03244687-8ea3-4ef0-9b73-7bc17171bc57",
-                  "parentUUID": "3a08663c-725d-44f5-b622-0c9451762adf",
+                  "uuid": "704dad7d-ca6c-4f27-95b1-4f3d25e87c8b",
+                  "parentUUID": "e2a0d649-2d98-477b-be6d-a66a3d04ccf2",
                   "isHook": true,
                   "skipped": false
                 }
@@ -66,7 +66,7 @@
                   "title": "Verify that check is successfully created for deletion",
                   "fullTitle": "CloudConformity API Test for DELETE  ...  DELETE Request Verify that check is successfully created for deletion",
                   "timedOut": false,
-                  "duration": 928,
+                  "duration": 710,
                   "state": "passed",
                   "speed": "slow",
                   "pass": true,
@@ -75,8 +75,8 @@
                   "context": null,
                   "code": "while(responseData != null){\n  let endPoint = '/v1/checks/'+ checkId;\n  let res = await apiHelper.sendDELETERequest(apiEndPointHelper.baseUrl, endPoint);\n  expect(res.status).to.equal(200);\n  expect(res.body.meta[0].message).equals('Check successfully deleted');\n  deleted=true;\nbreak;\n         }",
                   "err": {},
-                  "uuid": "12e7e5f9-c137-484c-a1bb-ec279c1ae8af",
-                  "parentUUID": "3a08663c-725d-44f5-b622-0c9451762adf",
+                  "uuid": "db4dfb6b-6c1f-4356-a394-76efedd478f2",
+                  "parentUUID": "e2a0d649-2d98-477b-be6d-a66a3d04ccf2",
                   "isHook": false,
                   "skipped": false
                 },
@@ -84,7 +84,7 @@
                   "title": "Verify that check has been delete successfuly",
                   "fullTitle": "CloudConformity API Test for DELETE  ...  DELETE Request Verify that check has been delete successfuly",
                   "timedOut": false,
-                  "duration": 583,
+                  "duration": 352,
                   "state": "passed",
                   "speed": "slow",
                   "pass": true,
@@ -93,21 +93,21 @@
                   "context": null,
                   "code": "while(deleted){\n    let endPoint = '/v1/checks/'+ checkId;\n    responseData=  await apiHelper.sendGETRequest(apiEndPointHelper.baseUrl,endPoint);\n    expect(responseData.status).to.equal(401); // check with CC if valid response code.\n    break;\n    }",
                   "err": {},
-                  "uuid": "5e0a67c0-e436-4f04-b87d-c8d3d5ea9a43",
-                  "parentUUID": "3a08663c-725d-44f5-b622-0c9451762adf",
+                  "uuid": "ebc0941d-fea7-4d10-ad69-6d051095e238",
+                  "parentUUID": "e2a0d649-2d98-477b-be6d-a66a3d04ccf2",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "12e7e5f9-c137-484c-a1bb-ec279c1ae8af",
-                "5e0a67c0-e436-4f04-b87d-c8d3d5ea9a43"
+                "db4dfb6b-6c1f-4356-a394-76efedd478f2",
+                "ebc0941d-fea7-4d10-ad69-6d051095e238"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 1511,
+              "duration": 1062,
               "root": false,
               "rootEmpty": false,
               "_timeout": 15000
@@ -123,18 +123,18 @@
           "_timeout": 15000
         },
         {
-          "uuid": "400622fc-e983-45c3-af97-ce4414b75c9d",
+          "uuid": "e721cad7-6f19-495f-8338-3532bc9437e5",
           "title": "CloudConformity API Test for GET  ... ",
-          "fullFile": "C:\\Development\\cc\\CloudConformityApiTests\\test\\GetChecksList.js",
+          "fullFile": "C:\\Development\\cc\\ccnew\\CloudConformityApiTests\\test\\GetChecksList.js",
           "file": "\\test\\GetChecksList.js",
           "beforeHooks": [],
           "afterHooks": [],
           "tests": [],
           "suites": [
             {
-              "uuid": "7a70ff72-c02b-413c-a838-35d88e621d9c",
+              "uuid": "f67ae48f-928b-464c-b6f1-769f6fc42541",
               "title": "Get multiple checks ..",
-              "fullFile": "C:\\Development\\cc\\CloudConformityApiTests\\test\\GetChecksList.js",
+              "fullFile": "C:\\Development\\cc\\ccnew\\CloudConformityApiTests\\test\\GetChecksList.js",
               "file": "\\test\\GetChecksList.js",
               "beforeHooks": [],
               "afterHooks": [],
@@ -143,7 +143,7 @@
                   "title": "User gets list of all checks",
                   "fullTitle": "CloudConformity API Test for GET  ...  Get multiple checks .. User gets list of all checks",
                   "timedOut": false,
-                  "duration": 886,
+                  "duration": 769,
                   "state": "passed",
                   "speed": "slow",
                   "pass": true,
@@ -152,28 +152,28 @@
                   "context": null,
                   "code": "let endPoint = '/v1/checks?page\\[size\\]='+testData.pageSize+ '&page\\[number\\]='+testData.pageNumber+ '&accountIds='+testData.accountIds+ '';\n\nlet responseData=  await apiHelper.sendGETRequest(apiEndPointHelper.baseUrl,endPoint);\nexpect(responseData.status).to.equal(200);\nexpect(responseData.body.data.length).greaterThan(1);",
                   "err": {},
-                  "uuid": "3ddf5881-177b-4982-9a4f-f4b18787cdd9",
-                  "parentUUID": "7a70ff72-c02b-413c-a838-35d88e621d9c",
+                  "uuid": "d940bc5b-2e2a-4855-bb83-7ab92e157046",
+                  "parentUUID": "f67ae48f-928b-464c-b6f1-769f6fc42541",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "3ddf5881-177b-4982-9a4f-f4b18787cdd9"
+                "d940bc5b-2e2a-4855-bb83-7ab92e157046"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 886,
+              "duration": 769,
               "root": false,
               "rootEmpty": false,
               "_timeout": 15000
             },
             {
-              "uuid": "f2603869-5ffc-409e-8094-617697f1b95e",
+              "uuid": "e63dd948-4df7-4e5a-b2c6-d920ca451864",
               "title": "Get single check ..",
-              "fullFile": "C:\\Development\\cc\\CloudConformityApiTests\\test\\GetChecksList.js",
+              "fullFile": "C:\\Development\\cc\\ccnew\\CloudConformityApiTests\\test\\GetChecksList.js",
               "file": "\\test\\GetChecksList.js",
               "beforeHooks": [],
               "afterHooks": [],
@@ -182,7 +182,7 @@
                   "title": "User gets list of all checks",
                   "fullTitle": "CloudConformity API Test for GET  ...  Get single check .. User gets list of all checks",
                   "timedOut": false,
-                  "duration": 539,
+                  "duration": 419,
                   "state": "passed",
                   "speed": "slow",
                   "pass": true,
@@ -191,20 +191,20 @@
                   "context": null,
                   "code": "let endPoint = '/v1/checks/'+ 'ccc:oCx-oDsB5:CUSTOM-001:EC2:us-west-2:sg-956d00ea';\nlet responseData=  await apiHelper.sendGETRequest(apiEndPointHelper.baseUrl,endPoint);\nexpect(responseData.status).to.equal(200);   \nexpect(responseData.body.data.id).to.not.equal(null);  \nexpect(responseData.body.data.type).to.not.equal(null); \nexpect(responseData.body.data.attributes.region).to.not.equal(null); \nexpect(responseData.body.data.attributes.resource).to.not.equal(null);",
                   "err": {},
-                  "uuid": "39b2496f-5874-4bb4-b527-2e5ad67763e7",
-                  "parentUUID": "f2603869-5ffc-409e-8094-617697f1b95e",
+                  "uuid": "49242a49-1d45-4137-9d6a-ec991696d13a",
+                  "parentUUID": "e63dd948-4df7-4e5a-b2c6-d920ca451864",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "39b2496f-5874-4bb4-b527-2e5ad67763e7"
+                "49242a49-1d45-4137-9d6a-ec991696d13a"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 539,
+              "duration": 419,
               "root": false,
               "rootEmpty": false,
               "_timeout": 15000
@@ -220,25 +220,25 @@
           "_timeout": 15000
         },
         {
-          "uuid": "83878530-9755-403f-9d2d-2b7543a90a43",
+          "uuid": "b3a3c0ef-19db-4c89-88e0-2199bb00cfd8",
           "title": "CloudConformity API Test for POST  ... ",
-          "fullFile": "C:\\Development\\cc\\CloudConformityApiTests\\test\\PostChecks.js",
+          "fullFile": "C:\\Development\\cc\\ccnew\\CloudConformityApiTests\\test\\PostChecks.js",
           "file": "\\test\\PostChecks.js",
           "beforeHooks": [],
           "afterHooks": [],
           "tests": [],
           "suites": [
             {
-              "uuid": "d2ea6446-430e-4ec2-bb79-b43d8fba0e4c",
+              "uuid": "c254cee0-9ca6-43ef-be17-cab39d0d4622",
               "title": "Create Checks Request Successfully",
-              "fullFile": "C:\\Development\\cc\\CloudConformityApiTests\\test\\PostChecks.js",
+              "fullFile": "C:\\Development\\cc\\ccnew\\CloudConformityApiTests\\test\\PostChecks.js",
               "file": "\\test\\PostChecks.js",
               "beforeHooks": [
                 {
                   "title": "\"before all\" hook",
                   "fullTitle": "CloudConformity API Test for POST  ...  Create Checks Request Successfully \"before all\" hook",
                   "timedOut": false,
-                  "duration": 1241,
+                  "duration": 626,
                   "state": null,
                   "speed": null,
                   "pass": false,
@@ -247,8 +247,8 @@
                   "context": null,
                   "code": "let endPoint = '/v1/checks'; \nresponseData = await apiHelper.sendPOSTRequest(apiEndPointHelper.baseUrl, endPoint, createCheckPayload);",
                   "err": {},
-                  "uuid": "43fdd929-c08c-4484-b8b6-d07e3906801c",
-                  "parentUUID": "d2ea6446-430e-4ec2-bb79-b43d8fba0e4c",
+                  "uuid": "dd38bf8b-c763-47ed-a909-3928bfe0931e",
+                  "parentUUID": "c254cee0-9ca6-43ef-be17-cab39d0d4622",
                   "isHook": true,
                   "skipped": false
                 }
@@ -268,8 +268,8 @@
                   "context": null,
                   "code": "while(responseData != null){\n  json1= JSON.parse(responseData.text);\n  expect(responseData.status).to.equal(200);\nbreak;\n         }",
                   "err": {},
-                  "uuid": "8454864e-dc6b-4761-b6ad-8a83b9cdeb27",
-                  "parentUUID": "d2ea6446-430e-4ec2-bb79-b43d8fba0e4c",
+                  "uuid": "885ba511-aab5-44f7-8e21-f49c75e001d4",
+                  "parentUUID": "c254cee0-9ca6-43ef-be17-cab39d0d4622",
                   "isHook": false,
                   "skipped": false
                 },
@@ -277,7 +277,7 @@
                   "title": "Verify that Check has correct AccountId",
                   "fullTitle": "CloudConformity API Test for POST  ...  Create Checks Request Successfully Verify that Check has correct AccountId",
                   "timedOut": false,
-                  "duration": 2,
+                  "duration": 1,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -286,8 +286,8 @@
                   "context": null,
                   "code": "while(responseData != null){\n  json1= JSON.parse(responseData.text);\n  expect(json1.data[0].id).contains(accountId);\n  break;\n         }",
                   "err": {},
-                  "uuid": "c0ca0d42-bdf5-4d9e-a0d8-d583189a444a",
-                  "parentUUID": "d2ea6446-430e-4ec2-bb79-b43d8fba0e4c",
+                  "uuid": "acc78718-70c4-476e-a64e-1813a6c75593",
+                  "parentUUID": "c254cee0-9ca6-43ef-be17-cab39d0d4622",
                   "isHook": false,
                   "skipped": false
                 },
@@ -295,7 +295,7 @@
                   "title": "Verify that Check has correct ruleId",
                   "fullTitle": "CloudConformity API Test for POST  ...  Create Checks Request Successfully Verify that Check has correct ruleId",
                   "timedOut": false,
-                  "duration": 0,
+                  "duration": 1,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -304,8 +304,8 @@
                   "context": null,
                   "code": "while(responseData != null){\n  json1= JSON.parse(responseData.text);\n  expect(json1.data[0].id).contains(ruleId);\nbreak;\n         }",
                   "err": {},
-                  "uuid": "6f5a0d4d-39b3-4fe5-ba4e-73c180f74c1e",
-                  "parentUUID": "d2ea6446-430e-4ec2-bb79-b43d8fba0e4c",
+                  "uuid": "7f61906d-b775-48d5-b362-0cce1bd6988b",
+                  "parentUUID": "c254cee0-9ca6-43ef-be17-cab39d0d4622",
                   "isHook": false,
                   "skipped": false
                 },
@@ -322,8 +322,8 @@
                   "context": null,
                   "code": "while(responseData != null){\n  json1= JSON.parse(responseData.text);\n  expect(json1.data[0].id).contains(service);\nbreak;\n         }",
                   "err": {},
-                  "uuid": "da0aef32-6b2b-402b-9853-068933f2e861",
-                  "parentUUID": "d2ea6446-430e-4ec2-bb79-b43d8fba0e4c",
+                  "uuid": "33e4c9a4-e2e6-4ee7-a2df-5edd99551862",
+                  "parentUUID": "c254cee0-9ca6-43ef-be17-cab39d0d4622",
                   "isHook": false,
                   "skipped": false
                 },
@@ -340,8 +340,8 @@
                   "context": null,
                   "code": "while(responseData != null){\n  json1= JSON.parse(responseData.text);\n  expect(json1.data[0].id).contains(region);\nbreak;\n         }",
                   "err": {},
-                  "uuid": "10004523-3199-4c58-a365-5d0fc9171d9a",
-                  "parentUUID": "d2ea6446-430e-4ec2-bb79-b43d8fba0e4c",
+                  "uuid": "1e66e15c-0099-418d-8fa4-3a2b4ebca7b5",
+                  "parentUUID": "c254cee0-9ca6-43ef-be17-cab39d0d4622",
                   "isHook": false,
                   "skipped": false
                 },
@@ -349,7 +349,7 @@
                   "title": "Verify that Check has correct resourceId",
                   "fullTitle": "CloudConformity API Test for POST  ...  Create Checks Request Successfully Verify that Check has correct resourceId",
                   "timedOut": false,
-                  "duration": 0,
+                  "duration": 1,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -358,33 +358,33 @@
                   "context": null,
                   "code": "while(responseData != null){\n  json1= JSON.parse(responseData.text);\n  expect(json1.data[0].id).contains(resourceId);\nbreak;\n         }",
                   "err": {},
-                  "uuid": "9ac6ac7a-d9c5-4183-93e1-83bfbfdbbb24",
-                  "parentUUID": "d2ea6446-430e-4ec2-bb79-b43d8fba0e4c",
+                  "uuid": "6990558e-7519-467c-99e6-88f7c3f39161",
+                  "parentUUID": "c254cee0-9ca6-43ef-be17-cab39d0d4622",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "8454864e-dc6b-4761-b6ad-8a83b9cdeb27",
-                "c0ca0d42-bdf5-4d9e-a0d8-d583189a444a",
-                "6f5a0d4d-39b3-4fe5-ba4e-73c180f74c1e",
-                "da0aef32-6b2b-402b-9853-068933f2e861",
-                "10004523-3199-4c58-a365-5d0fc9171d9a",
-                "9ac6ac7a-d9c5-4183-93e1-83bfbfdbbb24"
+                "885ba511-aab5-44f7-8e21-f49c75e001d4",
+                "acc78718-70c4-476e-a64e-1813a6c75593",
+                "7f61906d-b775-48d5-b362-0cce1bd6988b",
+                "33e4c9a4-e2e6-4ee7-a2df-5edd99551862",
+                "1e66e15c-0099-418d-8fa4-3a2b4ebca7b5",
+                "6990558e-7519-467c-99e6-88f7c3f39161"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 3,
+              "duration": 4,
               "root": false,
               "rootEmpty": false,
               "_timeout": 15000
             },
             {
-              "uuid": "a4d265e1-42ec-449f-beba-39c92ea6bfe0",
+              "uuid": "b30d0959-78c4-46e5-813d-f2bac94e30b4",
               "title": "Negative scenarios",
-              "fullFile": "C:\\Development\\cc\\CloudConformityApiTests\\test\\PostChecks.js",
+              "fullFile": "C:\\Development\\cc\\ccnew\\CloudConformityApiTests\\test\\PostChecks.js",
               "file": "\\test\\PostChecks.js",
               "beforeHooks": [],
               "afterHooks": [],
@@ -393,7 +393,7 @@
                   "title": "Optional ResourceId Test",
                   "fullTitle": "CloudConformity API Test for POST  ...  Negative scenarios Optional ResourceId Test",
                   "timedOut": false,
-                  "duration": 1031,
+                  "duration": 1083,
                   "state": "passed",
                   "speed": "slow",
                   "pass": true,
@@ -402,8 +402,8 @@
                   "context": null,
                   "code": "let accountId = \"oCx-oDsB5\", ruleId = \"CUSTOM-001\", service= \"EC2\", region = \"us-west-2\", resourceId = \"\";\nlet createCheckPayload = testData.buildPostCheckData(accountId, ruleId, service, region, resourceId);\nlet res = supertest(apiEndPointHelper.baseUrl).post(endPoint)\n.set('Content-Type', 'application/vnd.api+json')\n.set('Authorization',testData.apiKey)\n.timeout(10000)\n.send(createCheckPayload)\n.expect(200)\n.end(function (err, res) {\n  expect(res.body.data[0].attributes.resource).contain('');\n  done();\n  });",
                   "err": {},
-                  "uuid": "57e4b677-3ce0-4c84-b063-78caa20b0129",
-                  "parentUUID": "a4d265e1-42ec-449f-beba-39c92ea6bfe0",
+                  "uuid": "0f4a2bc0-dad4-442c-8217-9d471bf515c7",
+                  "parentUUID": "b30d0959-78c4-46e5-813d-f2bac94e30b4",
                   "isHook": false,
                   "skipped": false
                 },
@@ -420,8 +420,8 @@
                   "context": null,
                   "code": "let accountId = \"oCx-oDsB5Test\", ruleId = \"CUSTOM-001\", service= \"EC2\", region = \"us-west-2\", resourceId = \"\";\nlet createCheckPayload = testData.buildPostCheckData(accountId, ruleId, service, region, resourceId);\nlet res = supertest(apiEndPointHelper.baseUrl).post(endPoint)\n.set('Content-Type', 'application/vnd.api+json')\n.set('Authorization',testData.apiKey)\n.timeout(10000)\n.send(createCheckPayload)\n.expect(401)\n done()",
                   "err": {},
-                  "uuid": "c3b82b55-9a67-4ce3-8b69-a424293da91a",
-                  "parentUUID": "a4d265e1-42ec-449f-beba-39c92ea6bfe0",
+                  "uuid": "6d7f0701-79e5-4c87-93e5-e3d9b411d42b",
+                  "parentUUID": "b30d0959-78c4-46e5-813d-f2bac94e30b4",
                   "isHook": false,
                   "skipped": false
                 },
@@ -429,7 +429,7 @@
                   "title": "OverWrite CheckId - with same payload ",
                   "fullTitle": "CloudConformity API Test for POST  ...  Negative scenarios OverWrite CheckId - with same payload ",
                   "timedOut": false,
-                  "duration": 1002,
+                  "duration": 1201,
                   "state": "passed",
                   "speed": "slow",
                   "pass": true,
@@ -438,8 +438,8 @@
                   "context": null,
                   "code": "let checkid= 'ccc:oCx-oDsB5:CUSTOM-001:EC2:us-west-2:sg-956d00ea';\nlet accountId = \"oCx-oDsB5\", ruleId = \"CUSTOM-001\", service= \"EC2\", region = \"us-west-2\", resourceId = \"sg-956d00ea\";\nlet createCheckPayload = testData.buildPostCheckData(accountId, ruleId, service, region, resourceId);\nlet res = supertest(apiEndPointHelper.baseUrl).post(endPoint)\n.set('Content-Type', 'application/vnd.api+json')\n.set('Authorization',testData.apiKey)\n.timeout(10000)\n.send(createCheckPayload)\n.expect(200)\n.end(function (err, res) {\n  expect(res.body.data[0].id).equal(checkid);\n  done();\n  });",
                   "err": {},
-                  "uuid": "e5a58f78-56b6-4f49-bf0d-9e6e014d13d3",
-                  "parentUUID": "a4d265e1-42ec-449f-beba-39c92ea6bfe0",
+                  "uuid": "7ec98fce-7c67-4894-9ec0-333e8a57ea4f",
+                  "parentUUID": "b30d0959-78c4-46e5-813d-f2bac94e30b4",
                   "isHook": false,
                   "skipped": false
                 },
@@ -447,7 +447,7 @@
                   "title": "OverWrite CheckId - with different payload ",
                   "fullTitle": "CloudConformity API Test for POST  ...  Negative scenarios OverWrite CheckId - with different payload ",
                   "timedOut": false,
-                  "duration": 1635,
+                  "duration": 1468,
                   "state": "passed",
                   "speed": "slow",
                   "pass": true,
@@ -456,23 +456,23 @@
                   "context": null,
                   "code": "let checkid= 'ccc:oCx-oDsB5:CUSTOM-001:EC2:us-west-2:sg-956d00ea';\nlet accountId = \"oCx-oDsB5\", ruleId = \"CUSTOM-001\", service= \"EC2\", region = \"us-west-2\", resourceId = \"sg-956d00eaTest\";\nlet createCheckPayload = testData.buildPostCheckData(accountId, ruleId, service, region, resourceId);\nlet res = supertest(apiEndPointHelper.baseUrl).post(endPoint)\n.set('Content-Type', 'application/vnd.api+json')\n.set('Authorization',testData.apiKey)\n.timeout(10000)\n.send(createCheckPayload)\n.expect(200)\n.end(function (err, res) {\n  expect(res.body.data[0].id).not.equal(checkid);\n  done();\n  });",
                   "err": {},
-                  "uuid": "8216105b-09fe-4b84-bdbe-a58677309b9c",
-                  "parentUUID": "a4d265e1-42ec-449f-beba-39c92ea6bfe0",
+                  "uuid": "7822e86a-6c31-4f16-8572-5a0930e085b2",
+                  "parentUUID": "b30d0959-78c4-46e5-813d-f2bac94e30b4",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "57e4b677-3ce0-4c84-b063-78caa20b0129",
-                "c3b82b55-9a67-4ce3-8b69-a424293da91a",
-                "e5a58f78-56b6-4f49-bf0d-9e6e014d13d3",
-                "8216105b-09fe-4b84-bdbe-a58677309b9c"
+                "0f4a2bc0-dad4-442c-8217-9d471bf515c7",
+                "6d7f0701-79e5-4c87-93e5-e3d9b411d42b",
+                "7ec98fce-7c67-4894-9ec0-333e8a57ea4f",
+                "7822e86a-6c31-4f16-8572-5a0930e085b2"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 3669,
+              "duration": 3753,
               "root": false,
               "rootEmpty": false,
               "_timeout": 15000
@@ -488,25 +488,25 @@
           "_timeout": 15000
         },
         {
-          "uuid": "59a42e68-44b1-49e6-8579-f14e4b7d1b20",
+          "uuid": "8012b5e7-40ec-478e-bae2-f18ff7cf1550",
           "title": "CloudConformity API Test for UPDATE  ... ",
-          "fullFile": "C:\\Development\\cc\\CloudConformityApiTests\\test\\UpdateChecks.js",
+          "fullFile": "C:\\Development\\cc\\ccnew\\CloudConformityApiTests\\test\\UpdateChecks.js",
           "file": "\\test\\UpdateChecks.js",
           "beforeHooks": [],
           "afterHooks": [],
           "tests": [],
           "suites": [
             {
-              "uuid": "4f878ac1-6649-4d6b-aae2-e6c514662422",
+              "uuid": "6787e8a4-28a8-4a85-86ae-af67e81846ee",
               "title": "DELETE Request",
-              "fullFile": "C:\\Development\\cc\\CloudConformityApiTests\\test\\UpdateChecks.js",
+              "fullFile": "C:\\Development\\cc\\ccnew\\CloudConformityApiTests\\test\\UpdateChecks.js",
               "file": "\\test\\UpdateChecks.js",
               "beforeHooks": [
                 {
                   "title": "\"before all\" hook",
                   "fullTitle": "CloudConformity API Test for UPDATE  ...  DELETE Request \"before all\" hook",
                   "timedOut": false,
-                  "duration": 512,
+                  "duration": 1923,
                   "state": null,
                   "speed": null,
                   "pass": false,
@@ -515,8 +515,8 @@
                   "context": null,
                   "code": "let endPoint = '/v1/checks'; \nresponseData = await apiHelper.sendPOSTRequest(apiEndPointHelper.baseUrl, endPoint, createCheckPayload);     \nexpect(responseData.status).to.equal(200);  \ncheckId= JSON.parse(responseData.text).data[0].id;   \nexpect(responseData.body.data[0].id).to.not.equal(null);  \nexpect(responseData.body.data[0].type).to.not.equal(null); \nexpect(responseData.body.data[0].attributes.region).to.not.equal(null); \nexpect(responseData.body.data[0].attributes.resource).to.not.equal(null);\nexpect(responseData.body.data[0].attributes.status).equals('FAILURE');",
                   "err": {},
-                  "uuid": "321e2555-1a5c-43a7-97a3-90b8ad89cd13",
-                  "parentUUID": "4f878ac1-6649-4d6b-aae2-e6c514662422",
+                  "uuid": "5b310e24-3621-4ca0-bbb3-43c7b8c51eda",
+                  "parentUUID": "6787e8a4-28a8-4a85-86ae-af67e81846ee",
                   "isHook": true,
                   "skipped": false
                 }
@@ -527,7 +527,7 @@
                   "title": "Verify that check is successfully updated.",
                   "fullTitle": "CloudConformity API Test for UPDATE  ...  DELETE Request Verify that check is successfully updated.",
                   "timedOut": false,
-                  "duration": 1088,
+                  "duration": 1771,
                   "state": "passed",
                   "speed": "slow",
                   "pass": true,
@@ -536,20 +536,20 @@
                   "context": null,
                   "code": "// updated the status and confirmed UPDATE response\n          while(responseData != null){\n            let endPoint = '/v1/checks/'+ checkId;\n            responseData=  await apiHelper.sendPATCHRequest(apiEndPointHelper.baseUrl,endPoint, PatchCheckPayload);\n        \n            expect(responseData.body.data.attributes.status).equal('SUCCESS');\n            expect(responseData.status).to.equal(200);\n            break;\n         }",
                   "err": {},
-                  "uuid": "27ead483-fc73-4dc2-bdcf-106af7195bd8",
-                  "parentUUID": "4f878ac1-6649-4d6b-aae2-e6c514662422",
+                  "uuid": "9793c706-adb2-4655-ba46-f42df1d76944",
+                  "parentUUID": "6787e8a4-28a8-4a85-86ae-af67e81846ee",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "27ead483-fc73-4dc2-bdcf-106af7195bd8"
+                "9793c706-adb2-4655-ba46-f42df1d76944"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 1088,
+              "duration": 1771,
               "root": false,
               "rootEmpty": false,
               "_timeout": 15000
